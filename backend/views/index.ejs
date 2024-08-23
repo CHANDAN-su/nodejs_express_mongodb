@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/index.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <div class="container m-4 flex flex-col gap-10">
+      <div class="form">
+        <form action="/create" method="post">
+          <input
+            type="text"
+            placeholder="Enter your tittle"
+            class="block bg-black text-white w-full rounded-md p-2 outline-none"
+            name="tittle"
+          />
+          <textarea
+            placeholder="Enter your message"
+            class="block bg-black text-white w-full rounded-md p-2 mt-2 resize-none outline-none"
+            name="message"
+          ></textarea>
+          <input
+            type="submit"
+            value="Create a task"
+            class="p-4 mt-3 text-slate-400 bg-black rounded-lg hover:bg-white hover:text-black hover:text-bold cursor-pointer"
+          />
+        </form>
+      </div>
+
+      <div class="task flex flex-wrap gap-10 justify-around">
+        <% if(file.length > 0){ %> <% file.forEach((val) =>{ %>
+        <div class="task_details w-40 bg-gray-600 p-3 rounded-lg shadow-2xl shadow-gray-600" >
+          <div class="fileAndDelete flex items-center justify-between">
+            <h1 class="text-blue-600 text-xl"><%= val.slice(0,val.indexOf(".")) %></h1>
+            <a href="/delete/<%= val %>" class="delete"><i class="fa-solid fa-delete-left"></i></a>
+          </div>
+          <div class="flex items-center justify-between">
+            <a href="/files/<%= val %>" class="text-red-600 inline-block mt-2"
+              >Read more</a
+            >
+            <a href="/edit/<%= val %>" class="inline-block right-0 mt-2"
+              >edit</a
+            >
+          </div>
+        </div>
+        <% }); %> <% } else { %>
+        <h2 class="text-red-800 text-3xl">No task yet</h2>
+        <% } %>
+      </div>
+    </div>
+
+    <script src="/js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+sabse pahle humein kuchh cheejein seekhni hai alag alag
+i) cookie kaise set karte hai
+ii) bcrypt kaise use karte hai for password encrytption and decryption
+iii) jwt kya hai and jwt mein data store karein and baahar nikaalein
+
+npm i jsonwebtoken
+npm i bcrypt
+npm i express
+
+
+i)
+how to cookie set
+
+res.cookie(name: value)  -> method
+exteneces name: EditThisCookie
+
+cookie ko access karene ke li ex pacekage install karna parega: npm i cookie-parser then required than app.use(required_name)
+
+then
+
+access: req.cookies;
+
+
+ii)  $2b$10$SOVSw7ZKuYuqAtAvxxTzDOnYxsdHwz1Lr5APq0aUUDLQYqmPHiu0u  =>  cha12@thakur
+
+
+iii)  jwt teen hisso se banta hai
+
+
+

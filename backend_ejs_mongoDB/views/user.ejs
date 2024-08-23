@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User</title>
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="m-24 p-2 flex flex-col gap-2">
+      <a href="/" class="text-xl text-blue-600 font-serif">Create user</a>
+
+      <h1 class="text-2xl text-white font-bold tracking-wide">All User</h1>
+
+      <div class="box mt-5 flex flex-wrap gap-5">
+
+        <% users.forEach((val) => { %>
+
+            <div class="card w-56 bg-zinc-600 rounded p-4 flex flex-col gap-4">
+          <div class="user flex flex-col gap-1">
+            <div class="user_image bg-zinc-400 h-36 rounded-md">
+              <img src="<%= val.url %>" alt="this is network issue" />
+            </div>
+
+            <div class="user_details flex flex-col gap-0">
+              <h1 class="text-white text-xl tracking-wide"><%= val.name %></h1>
+              <h5 class="text-zinc-800 text-md"><%= val.email %></h5>
+            </div>
+          </div>
+
+          <div class="e_d flex justify-between">
+            <a href="/edit/<%= val._id %>" class="text-white text-md">Edit user</a>
+            <a href="/delete/<%= val._id %>" class="text-red-800 text-md">Delete user</a>
+          </div>
+        </div>
+
+        <% }); %>
+
+
+      </div>
+    </div>
+
+    <script src="/javascript/index.js"></script>
+  </body>
+</html>
