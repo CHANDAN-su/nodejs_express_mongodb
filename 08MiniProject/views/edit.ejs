@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini project</title>
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <div class="main Update" style="margin-top: 80px; margin-left: 10px;">
+        <h5 class="post">Update your post</h5>
+        <form action="/update/<%= post._id %>" method="post">
+          <textarea
+            id="message"
+            placeholder="What's on your mond?"
+            rows="3"
+            cols="45"
+            name="content",
+          ><%= post.content %></textarea>
+          <input type="submit" value="Update post" />
+        </form>
+      </div>
+      <h1><%= post._id %></h1>
+
+    </div>
+
+    <script src="/js/index.js"></script>
+  </body>
+</html>

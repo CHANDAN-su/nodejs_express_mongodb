@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini project</title>
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <div class="main">
+        <a class="logout" href="/logout">Logout</a>
+
+      <div class="postContainer">
+        <h3>Your posts</h3>
+
+        <div class="postBox">
+
+            <% user.forEach((val) =>{ %>
+
+                <div class="box" style="display: flex; gap: 4px; flex-direction: column;">
+                <h4 style="color: blue;">@ <%= val.username.name %></h4>
+
+                <p style="color: rgb(61, 61, 48);"><%= val.content %></p>
+                <div>
+                  <span><%= val.likes.length %> like</span>
+                </div>
+                <div class="likeEdit" style="display: flex; gap: 25px; margin-bottom: 5px;">
+                    <div class="like"><a href="/like/<%= val._id %>">
+                      <%= val.likes.indexOf(val.username._id) === -1 ? "Like" : "Unlike" %>
+                    </a></div>
+            
+                    <div class="edit"><a href="">edit</a></div>
+                </div>
+              </div>
+    
+            <% }); %>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/index.js"></script>
+  </body>
+</html>

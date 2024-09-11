@@ -1,0 +1,116 @@
+body{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(54, 47, 47);
+}
+
+#container, #profileContainer{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 50px;
+}
+
+#container .create, #profileContainer .create{
+    font-size: 30px;
+    color: green;
+    font-weight: bold;
+    font-family: cursive;
+}
+
+#container form input, #profileContainer form input, .Update form input{
+    outline: none;
+    margin-right: 10px;
+    padding: 8px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: yellow;
+}
+
+#container form input::placeholder, #profileContainer form textarea{
+    color: black;
+    font-weight: bold;
+}
+
+#container form input[type="submit"], #profileContainer form input[type="submit"], .Update form input[type="submit"]{
+    background-color: rgb(114, 114, 139);
+    color: black;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+#profileContainer .post, .main .post{
+    font-size: 21px;
+    color: yellowgreen;
+    margin-top: -14px;
+    margin-left: 10px;
+}
+
+#message{
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 4px;
+    outline: none;
+    resize: none;
+    display: block;
+    margin-top: -20px;
+    margin-bottom: 10px;
+}
+
+.postContainer{
+    margin: 50px;
+    padding: 10px;
+}
+
+.postContainer h3{
+    font-size: 21px;
+    color: yellowgreen;
+    margin-top: -14px;
+    margin-left: 10px;
+}
+
+.postContainer .postBox{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.postContainer .postBox .box{
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 0 10px;
+    width: 30%;
+    background: gray;
+}
+
+.postContainer .postBox .box h4, .postContainer .postBox .box p{
+    margin: 5px;
+}
+
+.postContainer .postBox .box .likeEdit div:nth-child(1) a{
+    color: blue;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.postContainer .postBox .box .likeEdit div:nth-child(2) a{
+    color: rgb(53, 50, 50);
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.main .logout{
+    display: block;
+    position: absolute;
+    top: 115px;
+    right: 40px;
+    font-size: 21px;
+    color: yellowgreen;
+    margin-top: -14px;
+    margin-left: 10px;
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+}
